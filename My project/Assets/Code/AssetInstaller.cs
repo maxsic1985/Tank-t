@@ -1,18 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
-public class AssetInstaller : MonoBehaviour
+[CreateAssetMenu(fileName = "AssetInstaller", menuName = "Installers/AssetInstaller")]
+public class AssetInstaller : ScriptableObjectInstaller<AssetInstaller>
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private MazeCellSize _cellSize;
+    [SerializeField] private MazeSize _mazeSize;
 
-    // Update is called once per frame
-    void Update()
+    public override void InstallBindings()
     {
-        
+        Container.BindInstances(_cellSize,_mazeSize);
     }
 }
