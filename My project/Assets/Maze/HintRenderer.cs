@@ -1,27 +1,22 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-
+using Zenject;
 public class HintRenderer : MonoBehaviour
 {
-    public MazeSpawner MazeSpawner;
-
-    private LineRenderer componentLineRenderer;
-
-    private void Start()
-    {
-        componentLineRenderer = GetComponent<LineRenderer>();
-    }
+    [Inject] MazeCellSize _cellSize;
+    [SerializeField] private MazeSpawnerPersenter _mazeSpawner;
+    public LineRenderer ComponentLineRenderer => gameObject.GetComponent<LineRenderer>();
 
     public void DrawPath()
     {
-        Maze maze = MazeSpawner.maze;
+        Maze maze = _mazeSpawner.maze;
         int x = maze.finishPosition.x;
         int y = maze.finishPosition.y;
         List<Vector3> positions = new List<Vector3>();
 
         while ((x != 0 || y != 0) && positions.Count < 10000)
         {
-            positions.Add(new Vector3(x * MazeSpawner.CellSize.x, y * MazeSpawner.CellSize.y, y * MazeSpawner.CellSize.z));
+            positions.Add(new Vector3(x * _cellSize.CurrentSize.x, y * _cellSize.CurrentSize.y, y * _cellSize.CurrentSize.z));
 
             MazeGeneratorCell currentCell = maze.cells[x, y];
 
@@ -52,7 +47,7 @@ public class HintRenderer : MonoBehaviour
         }
 
         positions.Add(Vector3.zero);
-        componentLineRenderer.positionCount = positions.Count;
-        componentLineRenderer.SetPositions(positions.ToArray());
+        ComponentLineRenderer.positionCount = positions.Count;
+        ComponentLineRenderer.SetPositions(positions.ToArray());
     }
 }
