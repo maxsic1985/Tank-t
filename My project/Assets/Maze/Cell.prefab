@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 1715736460886460419}
   - component: {fileID: 3460041336939875126}
   - component: {fileID: 7455069011633928185}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 4097853141623605143}
   - component: {fileID: 5523040412545377730}
   - component: {fileID: 7353389154918289936}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}

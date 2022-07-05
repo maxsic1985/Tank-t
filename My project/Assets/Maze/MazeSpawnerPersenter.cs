@@ -28,6 +28,6 @@ public class MazeSpawnerPersenter : MonoBehaviour
                 c.WallBottom.gameObject.SetActive(maze.cells[x, y].WallBottom);
             }
         }
-        HintRenderer.DrawPath();
+      //  HintRenderer.DrawPath();
     }
 }
