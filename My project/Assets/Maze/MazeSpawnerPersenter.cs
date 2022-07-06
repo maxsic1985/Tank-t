@@ -13,7 +13,7 @@ public class MazeSpawnerPersenter : MonoBehaviour
 
     public Maze maze;
   
-    private void Start()
+    private void Awake()
     {
         generator = new MazeGenerator(_mazeSize);
         maze = generator.GenerateMaze();
