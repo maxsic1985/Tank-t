@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class PlayerControls : MonoBehaviour
+public class PlayerControls : MonoBehaviour, IPlayer
 {
     public float Speed = 2;
 
