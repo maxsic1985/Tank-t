@@ -439,6 +439,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1868588352}
     m_Modifications:
+    - target: {fileID: 2082561831, guid: 41824d7cfccbba34184083c6127e162b, type: 3}
+      propertyPath: enableRotation
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3413000277417407817, guid: 41824d7cfccbba34184083c6127e162b, type: 3}
       propertyPath: _view
       value: 
@@ -450,6 +454,10 @@ PrefabInstance:
     - target: {fileID: 4131662938850338794, guid: 41824d7cfccbba34184083c6127e162b, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5014896784284952620, guid: 41824d7cfccbba34184083c6127e162b, type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5100757736851056852, guid: 41824d7cfccbba34184083c6127e162b, type: 3}
       propertyPath: _waypoints.Array.data[0]
@@ -703,10 +711,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 959982415962159121, guid: cca316a663fff82478e68ebc3aebfcb9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 959982415962159122, guid: cca316a663fff82478e68ebc3aebfcb9, type: 3}
-      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 959982415962159151, guid: cca316a663fff82478e68ebc3aebfcb9, type: 3}
