@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cellSize: {fileID: 11400000, guid: 833359366c84538489502892f04c1740, type: 2}
   _mazeSize: {fileID: 11400000, guid: 709ce32f1b1bf3044b4691909d4a3040, type: 2}
+  _noizeObserverView: {fileID: 5321066446984871079, guid: cca316a663fff82478e68ebc3aebfcb9, type: 3}

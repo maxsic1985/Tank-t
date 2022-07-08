@@ -1,7 +1,7 @@
 ﻿using Pathfinding;
 using UnityEngine;
 
-
+[RequireComponent(typeof(SpriteRenderer))]
 public class ProtectorAIPresenter : MonoBehaviour, IProtector
 {
     [SerializeField] private PlayerControls _playerView;
@@ -11,6 +11,7 @@ public class ProtectorAIPresenter : MonoBehaviour, IProtector
 
     private PatrolAIModel _model;
     private bool _isPatrolling;
+    private SpriteRenderer _spriteRendere;
 
     private void Start()
     {
@@ -18,7 +19,7 @@ public class ProtectorAIPresenter : MonoBehaviour, IProtector
         _destinationSetter.target = _model.GetNextTarget();
         _isPatrolling = true;
         _patrolPath.TargetReached += OnTargetReached;
-
+        _spriteRendere = gameObject.GetComponent<SpriteRenderer>();
     }
 
     public void Deinit()
@@ -37,12 +38,15 @@ public class ProtectorAIPresenter : MonoBehaviour, IProtector
     {
         _isPatrolling = false;
         _destinationSetter.target = invader.transform;
+        _spriteRendere.color = Color.red;
     }
 
     public void FinishProtection(GameObject invader)
     {
         _isPatrolling = true;
         _destinationSetter.target = _model.GetClosestTarget(_playerView.transform.position);
+        _spriteRendere.color = Color.blue;
+
     }
 
     private void OnDestroy()
