@@ -4,10 +4,12 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class ProtectorAIPresenter : MonoBehaviour, IProtector
 {
+    [SerializeField] private LooseMenu _gameView;
     [SerializeField] private PlayerControls _playerView;
     [SerializeField] private ProtectorAiView _view;
     [SerializeField] private AIDestinationSetter _destinationSetter;
     [SerializeField] private AIPatrolPath _patrolPath;
+
 
     private PatrolAIModel _model;
     private bool _isPatrolling;
@@ -51,7 +53,7 @@ public class ProtectorAIPresenter : MonoBehaviour, IProtector
 
     public void GameOver()
     {
-        Debug.Log("GameOver");
+        _gameView.gameObject.SetActive(true);
         Time.timeScale = 0;
     }
 
