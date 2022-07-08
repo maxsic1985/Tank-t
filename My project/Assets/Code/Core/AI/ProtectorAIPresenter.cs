@@ -15,6 +15,7 @@ public class ProtectorAIPresenter : MonoBehaviour, IProtector
 
     private void Start()
     {
+        _view.GameOver += GameOver;
         _model = new PatrolAIModel(_view.Waypoints);
         _destinationSetter.target = _model.GetNextTarget();
         _isPatrolling = true;
@@ -46,7 +47,12 @@ public class ProtectorAIPresenter : MonoBehaviour, IProtector
         _isPatrolling = true;
         _destinationSetter.target = _model.GetClosestTarget(_playerView.transform.position);
         _spriteRendere.color = Color.blue;
+    }
 
+    public void GameOver()
+    {
+        Debug.Log("GameOver");
+        Time.timeScale = 0;
     }
 
     private void OnDestroy()

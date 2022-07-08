@@ -26,8 +26,6 @@ public class NoizeObserverPresenter : MonoBehaviour
 
     }
 
-
-
     private void StartProtection(GameObject gameObject)
     {
         for (int i = 0; i < _protector.Length; i++)
